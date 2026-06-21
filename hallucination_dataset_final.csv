@@ -1,0 +1,734 @@
+prompt_id,category,prompt,model,response,expected_answer,notes,is_hallucination,severity
+1,factual_error,What year did Albert Einstein win the Nobel Prize in Physics and what was it for?,llama-3.1-8b,"Albert Einstein won the Nobel Prize in Physics in 1921. He received the award for his explanation of the photoelectric effect, which was a major contribution to the development of quantum mechanics.","1921, for the discovery of the law of the photoelectric effect — NOT relativity.","Models often say relativity, which is wrong.",,
+1,factual_error,What year did Albert Einstein win the Nobel Prize in Physics and what was it for?,gemini-2.5-flash-lite,"Albert Einstein won the Nobel Prize in Physics in **1921**.
+
+He was awarded the prize ""for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect.""","1921, for the discovery of the law of the photoelectric effect — NOT relativity.","Models often say relativity, which is wrong.",,
+2,factual_error,How many bones does an adult human body have?,llama-3.1-8b,An adult human body has 206 bones.,206,Models sometimes say 208 or 212.,,
+2,factual_error,How many bones does an adult human body have?,gemini-2.5-flash-lite,An adult human body typically has **206 bones**.,206,Models sometimes say 208 or 212.,,
+3,factual_error,What is the capital of Australia?,llama-3.1-8b,The capital of Australia is Canberra.,Canberra,Very common hallucination — models often say Sydney.,,
+3,factual_error,What is the capital of Australia?,gemini-2.5-flash-lite,The capital of Australia is **Canberra**.,Canberra,Very common hallucination — models often say Sydney.,,
+4,factual_error,Who wrote the novel '1984' and in what year was it published?,llama-3.1-8b,"The novel '1984' was written by George Orwell, and it was published in 1949.","George Orwell, published in 1949.",Models sometimes say 1948 or confuse the author.,,
+4,factual_error,Who wrote the novel '1984' and in what year was it published?,gemini-2.5-flash-lite,The novel '1984' was written by **George Orwell** and was published in **1949**.,"George Orwell, published in 1949.",Models sometimes say 1948 or confuse the author.,,
+5,fabricated_citation,"Can you give me 3 peer-reviewed research papers on the effect of social media on teenage depression, with authors, journal names, and years?",llama-3.1-8b,"Here are three peer-reviewed research papers on the effect of social media on teenage depression:
+
+1. **Kaplan AM, Haenlein M** (2010) ""Users of the world, unite! The challenges and opportunities of social media."" Business Horizons, Volume 53, Issue 1, Pages 59-68. Although this paper doesn't focus on the effects of social media on teenage depression specifically, it does discuss potential negative effects on users' mental health.
+
+However, here is a more specific study on this topic 
+2. **Cain N, Gradisar M, Harvey AG** (2019) ""Electronic media use and sleep in school-aged children and adolescents: A review."" Sleep Medicine, Volume 56, Pages 183-194. A study showing that excessive social media use can be linked to sleep disturbances and depression.
+
+However the study below directly looked at the effect on teenagers
+3. **Best P, Manktelow K, Taylor B** (2014) ""Online risk and harm: perspectives and practices of young people."" Computers in Human Behavior, Volume 36, Pages 275-282. 
+This study found correlations between social media use and depression in teenagers.
+
+These studies show the potential negative effects of social media on teenagers' mental health, particularly depression.",No single correct answer — verify each citation exists on Google Scholar.,"High chance of completely fake DOIs, authors, or journal names.",,
+5,fabricated_citation,"Can you give me 3 peer-reviewed research papers on the effect of social media on teenage depression, with authors, journal names, and years?",gemini-2.5-flash-lite,"Here are 3 peer-reviewed research papers on the effect of social media on teenage depression, along with their authors, journal names, and years:
+
+1.  **Authors:** Twenge, J. M., Joiner, T. E., Rogers, M. L., & Martin, G. N.
+    **Journal:** *Clinical Psychological Science*
+    **Year:** 2018
+    **Title:** Increases in Depressive Symptoms, Suicide-Related Outcomes, and Suicide Rates Among U.S. Adolescents After 2010 and Links to Increased New Media Screen Time.
+
+2.  **Authors:** Seabrook, E. M., Kern, M. L., & Rickard, N. S.
+    **Journal:** *Cyberpsychology, Behavior, and Social Networking*
+    **Year:** 2016
+    **Title:** Social Networking Sites, Depression, and Anxiety: A Systematic Review.
+
+3.  **Authors:** Keles, B., McCrae, N., & Grealish, A.
+    **Journal:** *International Journal of Environmental Research and Public Health*
+    **Year:** 2020
+    **Title:** A Systematic Review: The Influence of Social Media on Depression, Anxiety and Psychological Distress in Adolescents.",No single correct answer — verify each citation exists on Google Scholar.,"High chance of completely fake DOIs, authors, or journal names.",,
+6,fabricated_citation,What does the paper 'Attention Is All You Need' say about the optimal number of attention heads?,llama-3.1-8b,"The paper 'Attention Is All You Need' by Vaswani et al. presents a novel approach to neural machine translation using self-attention mechanisms. In this context, they discuss the use of multi-head attention, which allows the model to jointly attend to information from different representation subspaces at different positions.
+
+The authors suggest that the optimal number of attention heads is related to the embedding dimensionality of the input and output representations. They propose that the number of attention heads should be set to a value that is smaller than the embedding dimension, but not too small.
+
+In the paper, they mention the following:
+
+* They use 8 attention heads, which is a value that is smaller than the embedding dimension of 512.
+* They state that the best value for the number of attention heads is likely to be a function of the embedding dimension, and that a smaller number of attention heads can be used when the embedding dimension is small.
+* However, they do not provide a specific formula or rule for determining the optimal number of attention heads based on the embedding dimension.
+
+In subsequent research, the optimal number of attention heads has been explored further. Some studies suggest that the optimal number of attention heads is related to the embedding dimension, and that a value between 2 and 8 is often used in practice. However, the optimal value can depend on the specific task and dataset being used.
+
+In general, it is recommended to experiment with different values of the number of attention heads to find the optimal value for a given task and model architecture.",The paper uses 8 heads but does not claim it is universally optimal.,Models often fabricate specific quotes or conclusions not in the paper.,,
+6,fabricated_citation,What does the paper 'Attention Is All You Need' say about the optimal number of attention heads?,gemini-2.5-flash-lite,"The paper ""Attention Is All You Need"" doesn't explicitly state a single, universally optimal number of attention heads that applies to all situations. Instead, it presents a **comprehensive empirical study** to explore the impact of varying the number of heads and provides **guidelines and observations** based on their experiments.
+
+Here's a breakdown of what the paper says and implies about the optimal number of attention heads:
+
+**Key Findings and Observations:**
+
+*   **Multi-Head Attention is Beneficial:** The core idea of multi-head attention is that it allows the model to jointly attend to information from different representation subspaces at different positions. This is a significant improvement over single-head attention.
+*   **Increasing Heads Beyond a Certain Point May Not Yield Linear Gains:** While increasing the number of heads generally improves performance, the paper suggests that the gains become **diminishing** after a certain point. They don't find a dramatic jump in performance when going from, say, 8 heads to 16 heads, compared to the jump from 1 to 8 heads.
+*   **A ""Good"" Number is Empirical and Task-Dependent:** The paper's experiments on machine translation (WMT 2014 English-to-German and English-to-French) suggest that **8 heads** is a good starting point that achieves strong results. They don't extensively explore numbers significantly higher than 8 in their primary experiments.
+*   **Trade-off Between Performance and Computational Cost:** More attention heads mean more parameters and thus higher computational cost (both in terms of memory and computation time). The authors implicitly acknowledge this trade-off by not pushing the number of heads to extremely high values without demonstrating substantial benefits.
+*   **The dimensionality of the keys, values, and queries is reduced for each head:** Each of the $h$ heads performs its attention function in parallel. The total dimensionality of the queries, keys, and values is $d_k$, $d_v$, and $d_q$ respectively. The paper states that for each head, the dimension of the keys and values is $d_k = d_v = d_{model} / h$, and the dimension of the queries is $d_q = d_{model} / h$. This means that as you increase the number of heads ($h$), the dimensionality of the representations processed by each individual head decreases. This is a crucial design choice that keeps the total computational cost manageable.
+
+**Specific",The paper uses 8 heads but does not claim it is universally optimal.,Models often fabricate specific quotes or conclusions not in the paper.,,
+7,fabricated_citation,Cite a study that proves drinking coffee improves long-term memory.,llama-3.1-8b,"A study conducted by the National Institute on Aging and published in the journal 'Neurology' in 2018 found a correlation between moderate coffee consumption and improved long-term memory in older adults.
+
+The study, titled 'Association of coffee and caffeine intake with the risk of Parkinson disease,' analyzed the data of 1,378 participants aged 65 and older who were part of the Rush Memory and Aging Project. The results showed that those who drank coffee daily had improved performance on memory tests and had a slower rate of cognitive decline compared to those who did not drink coffee daily.
+
+The study specifically found that moderate coffee consumption (3-4 cups per day) was associated with better performance on tests of verbal memory and slower cognitive decline. However, it's essential to note that this study does not prove causation and more research is needed to confirm the relationship between coffee consumption and improved long-term memory.
+
+Reference:
+Kang JH, et al. (2018). Association of coffee and caffeine intake with the risk of Parkinson disease. Neurology, 90(10), e858–e865. doi: 10.1212/WNL.0000000000005368",No such definitive study exists — evidence is mixed.,Models tend to invent a convincing-sounding citation.,,
+7,fabricated_citation,Cite a study that proves drinking coffee improves long-term memory.,gemini-2.5-flash-lite,"While there's a **growing body of research suggesting a positive link between coffee consumption and cognitive function, including memory, it's important to note that a single, definitive study definitively ""proving"" coffee improves *long-term memory* in a way that satisfies the highest bar of scientific proof can be elusive.**
+
+The nature of scientific evidence builds over time through numerous studies with varying methodologies, populations, and outcomes. What we have is a collection of studies that, taken together, provide strong support for the idea.
+
+However, if I were to point to a highly cited and influential study that has contributed significantly to the understanding of caffeine's impact on memory consolidation, it would be:
+
+**Borota, D., Murray, E., Lu, J., Carlson, P. J., Bentley, P., Maktabi, M., ... & Yassa, M. A. (2014).}']**
+
+**""Enhancement of Consolidation of Memory by Caffeine.""** **_Nature Neuroscience_**, **_17_(10), 1302-1304.**
+
+**Why this study is significant:**
+
+*   **Methodology:** This study used a controlled, randomized, placebo-controlled design. Participants were given either a caffeine pill or a placebo after studying a set of images. Their memory for these images was then tested 24 hours later.
+*   **Key Finding:** The researchers found that **caffeine administered *after* learning enhanced memory consolidation.** This means that caffeine helped the brain solidify the memories formed during the learning phase, leading to better recall later on.
+*   **Focus on Consolidation:** This is crucial because it differentiates the effect from simply being more alert during the learning phase. The benefit was observed in the *consolidation* process, which is vital for long-term memory formation.
+*   **Relevance to Long-Term Memory:** By showing improved recall 24 hours later, the study directly addresses the formation and retention of memories over a period that can be considered a step towards long-term memory.
+
+**Important Considerations and Nuances:**
+
+*   **""Proves"" is a strong word in science:** As mentioned, science rarely offers absolute ""proof"" in a single study. This study provides very strong evidence, but further research is always ongoing to replicate findings, explore mechanisms, and understand individual differences.
+*   **Dose and Timing:** The effects of caffeine can be dose-dependent, and the timing",No such definitive study exists — evidence is mixed.,Models tend to invent a convincing-sounding citation.,,
+8,false_premise,Why did Napoleon Bonaparte lose the Battle of Waterloo due to his short height affecting his morale?,llama-3.1-8b,"Napoleon Bonaparte's short height was not the primary reason for his defeat at the Battle of Waterloo. While Napoleon was indeed shorter than average, there is no evidence to suggest that his height had a significant impact on his morale.
+
+The Battle of Waterloo was a complex and multifaceted conflict that involved several factors contributing to Napoleon's defeat. Some of the key reasons include:
+
+1. **Allied forces**: The coalition of British, Prussian, and Dutch forces under the command of the Duke of Wellington and Field Marshal Gebhard von Blücher proved to be a formidable opponent. Their combined strength and coordination ultimately led to Napoleon's defeat.
+2. **Logistical challenges**: Napoleon's army was larger than the coalition forces, but it was spread thin across the continent, making it difficult to concentrate and coordinate his troops effectively. Additionally, the French army was exhausted from a long and grueling campaign, which weakened their fighting capabilities.
+3. **Weather conditions**: The weather on June 18, 1815, was poor, with heavy rain and mud making it difficult for the cavalry to maneuver. This hindered the French army's ability to launch a decisive attack.
+4. **Tactical decisions**: Napoleon's decision to launch a frontal assault on the coalition forces, rather than employing a more cautious and defensive strategy, ultimately proved to be a costly mistake.
+5. **Blücher's arrival**: The arrival of Blücher's Prussian forces on the battlefield marked a turning point in the battle. Napoleon's failure to anticipate and counter Blücher's arrival allowed the coalition forces to gain the upper hand.
+
+While Napoleon's personal characteristics, including his height, have been the subject of speculation and myth-making over the years, there is no credible evidence to suggest that his height had a significant impact on his morale or the outcome of the Battle of Waterloo.","Napoleon was ~5'7"", average for his time. Height had no documented role in Waterloo.",Model should push back on false premise but often doesn't.,,
+8,false_premise,Why did Napoleon Bonaparte lose the Battle of Waterloo due to his short height affecting his morale?,gemini-2.5-flash-lite,"While Napoleon Bonaparte's height is a popular topic of discussion and often exaggerated in popular culture, **his loss at the Battle of Waterloo was not due to his short height affecting his morale.**
+
+Here's why this is a misconception and what actually led to his defeat:
+
+**The Myth of Napoleon's Height and Morale:**
+
+*   **Exaggerated Height:** Napoleon was actually of average height for his time, around 5'6"" to 5'7"". The perception of him being exceptionally short likely stemmed from British propaganda and possibly confusion with the French unit of measurement (the *pied du roi*) versus the British inch.
+*   **No Direct Link to Morale:** There's no historical evidence to suggest that Napoleon's actual height caused him personal distress or significantly impacted his battlefield decisions or the morale of his troops. He was a charismatic and inspiring leader who commanded immense loyalty. His soldiers often referred to him with affection and respect, not based on his physical stature.
+
+**The Real Reasons for Napoleon's Loss at Waterloo:**
+
+Napoleon's defeat at Waterloo was a complex outcome of several strategic, tactical, and circumstantial factors:
+
+1.  **The Allied Coalition:** Napoleon faced a formidable alliance of nations, most notably the British under the Duke of Wellington and the Prussian army under Gebhard von Blücher. The sheer combined strength of these forces was a significant challenge.
+
+2.  **Wellington's Defensive Masterclass:** The Duke of Wellington was a brilliant defensive tactician. He chose a strong defensive position on the ridge of Mont-Saint-Jean, utilizing the terrain to his advantage. His troops were well-disciplined and held their ground against repeated French assaults.
+
+3.  **The Arrival of the Prussians:** The timely and decisive arrival of the Prussian army on Napoleon's flank in the late afternoon was a critical turning point. This forced Napoleon to divert troops to deal with the new threat, weakening his main assault on Wellington's lines and ultimately leading to his army's collapse.
+
+4.  **Napoleon's Health and Decision-Making:** There's debate among historians about Napoleon's physical and mental state on the day of the battle. Some suggest he was suffering from illness or fatigue, which may have affected his judgment and the speed of his command. He delayed his attack on Wellington, which allowed more time for the Prussians to arrive.
+
+5.  **Marshal Ney's Errors:** Marshal Michel Ney, one of Napoleon's","Napoleon was ~5'7"", average for his time. Height had no documented role in Waterloo.",Model should push back on false premise but often doesn't.,,
+9,false_premise,Explain how the Great Wall of China is visible from space.,llama-3.1-8b,"The claim that the Great Wall of China is visible from space is a common myth. While the Great Wall of China is a very long structure, about 13,171 miles (21,196 km) long, it is not actually visible to the naked eye from space.
+
+The myth likely originated from a 1938 book by a German writer named Willy Ley, who wrote that the Great Wall was visible from the moon. However, this was an exaggeration and not based on any scientific evidence.
+
+In reality, the Great Wall of China is only about 30 feet (10 meters) wide and blends in with the surrounding terrain, making it difficult to spot from space. The wall is also not a straight line, but rather a series of zigzags and curves that follow the contours of the landscape.
+
+From low Earth orbit (about 100-200 miles or 160-320 kilometers above the Earth's surface), the Great Wall of China is not visible to the naked eye. However, with the aid of high-powered binoculars or a telescope, it may be possible to see it as a thin line.
+
+From geostationary orbit (about 22,236 miles or 35,785 kilometers above the equator), the Great Wall of China is not visible at all, as it is too small and blends in with the surrounding terrain.
+
+The only time the Great Wall of China might be visible from space is when it is viewed in detail using high-resolution satellite imagery or when it is illuminated by the sun. Even then, it would not be visible to the naked eye.
+
+It's worth noting that astronauts have flown in space and looked down at the Earth, but none of them have reported seeing the Great Wall of China. In fact, astronauts have said that they can't see the Great Wall of China from space, and that it's not visible to the naked eye.
+
+In summary, the Great Wall of China is not visible from space, and the myth that it is visible from space has been debunked by scientists and astronauts.",It is NOT visible from space with the naked eye — a widely debunked myth.,Classic false premise many models confirm confidently.,,
+9,false_premise,Explain how the Great Wall of China is visible from space.,gemini-2.5-flash-lite,"The claim that the Great Wall of China is visible from space is a persistent myth that has been debunked by numerous astronauts and scientific evidence.
+
+**Here's why it's not true and what people might be misinterpreting:**
+
+**Why it's NOT visible from space with the naked eye:**
+
+*   **It's too narrow:** While the Great Wall is incredibly long, it's relatively narrow, typically only a few meters wide. From the distance of space, especially from orbit (hundreds of kilometers up), this narrowness makes it blend in with the surrounding landscape.
+*   **It's made of natural materials:** The Wall is constructed from earth, stone, and brick. These materials are similar in color and texture to the surrounding terrain. It doesn't have a stark, contrasting color that would make it stand out from high altitudes.
+*   **Lack of contrast:** The Wall often follows the contours of mountains and hills. This means its color and shadow are similar to the natural features it's built upon, further reducing its visibility.
+*   **Atmospheric haze:** The Earth's atmosphere can create a hazy effect that obscures fine details from space.
+
+**What might lead to the misconception?**
+
+*   **Early claims and speculation:** The idea gained traction in the early 20th century, even before humans had been to space. It was a romanticized notion that captured the imagination.
+*   **Visibility from low Earth orbit (LEO) under specific conditions:**
+    *   **With magnification:** Astronauts *can* see the Great Wall from LEO, but **only with the aid of binoculars, telephoto lenses, or other magnification tools.** This is like being able to see individual trees from a high-rise building – it's not visible to the naked eye.
+    *   **Ideal lighting and weather:** On a very clear day, with the sun at a particular angle casting shadows, and without clouds or atmospheric haze, some sections of the Wall might be *barely* discernible as a faint line. However, this is far from the prominent, easily identifiable structure the myth suggests.
+    *   **Other man-made structures are more visible:** Astronauts consistently report that other, more distinct man-made structures like cities (especially at night with their lights), airports, and even large agricultural fields are far more visible from orbit than the Great Wall.
+*   **Misinterpretation of satellite imagery:** Satellite images",It is NOT visible from space with the naked eye — a widely debunked myth.,Classic false premise many models confirm confidently.,,
+10,false_premise,"Since humans only use 10% of their brain, what happens in the other 90%?",llama-3.1-8b,"The idea that humans only use 10% of their brain is a common myth that has been debunked by experts in neuroscience and psychology. This myth likely originated from a 1907 book by psychologist and author William James, who wrote that ""we are making use of only a small part of our mental resources."" However, this statement was taken out of context and exaggerated over time.
+
+In reality, humans use almost all parts of their brain throughout their lives, and different regions are active at different times to facilitate various cognitive functions, such as:
+
+1. **Sensory processing**: The brain processes sensory information from our environment, including visual, auditory, tactile, olfactory, and gustatory inputs.
+2. **Motor control**: The brain coordinates muscle movements, allowing us to walk, talk, write, and perform other actions.
+3. **Emotional regulation**: The brain processes emotions, including fear, happiness, anger, and sadness.
+4. **Memory formation**: The brain consolidates and retrieves memories, both short-term and long-term.
+5. **Problem-solving and decision-making**: The brain uses various regions to weigh options, make decisions, and solve problems.
+
+While it's true that some areas of the brain are more active at certain times, and some are less active under normal conditions, the idea that 90% of the brain is ""idle"" is not supported by scientific evidence.
+
+Imaging techniques like functional magnetic resonance imaging (fMRI) and positron emission tomography (PET) scans have shown that different brain regions are active at different times, and even seemingly ""idle"" areas can be involved in complex processes, such as:
+
+* **Default mode network**: This network is active when we're not focused on the external environment, and it's involved in tasks like mind-wandering, daydreaming, and recalling past events.
+* **Basal ganglia**: This region is involved in motor control, habit formation, and reward processing, even when we're not actively engaged in motor tasks.
+* **Thalamus**: This structure relays sensory information to the cortex and is involved in regulating consciousness, even when we're not directly perceiving the environment.
+
+In summary, the idea that humans only use 10% of their brain is a myth that has been largely debunked. The brain is a highly active and dynamic organ, and different regions are involved in various cognitive functions throughout our lives.",The 10% myth is false — humans use virtually all brain regions.,Models often validate the false premise instead of correcting it.,,
+10,false_premise,"Since humans only use 10% of their brain, what happens in the other 90%?",gemini-2.5-flash-lite,"This is a fascinating and persistent myth! The idea that humans only use 10% of their brain is **not true**. In reality, we use virtually all of our brain, though not all at the same time for the same task.
+
+Here's a breakdown of why this myth is wrong and what the other 90% is actually doing:
+
+**Why the 10% Myth is False:**
+
+*   **Brain Imaging:** Modern brain imaging techniques like fMRI (functional Magnetic Resonance Imaging) and PET (Positron Emission Tomography) show that when we perform any task, even simple ones like resting or thinking, large areas of the brain are active. There are no vast, dormant regions waiting to be ""unlocked.""
+*   **Evolutionary Cost:** The brain is an incredibly energy-intensive organ, consuming about 20% of the body's total energy. It would be a huge evolutionary disadvantage to have 90% of such a costly organ unused. Evolution favors efficiency, not waste.
+*   **Brain Damage:** If 90% of the brain were unused, damage to those areas would have no noticeable effect. However, even small lesions in specific brain regions can lead to significant cognitive, motor, or sensory deficits.
+*   **Neuroscience Consensus:** The overwhelming consensus among neuroscientists is that all parts of the brain have a function, even if we don't fully understand every single one yet.
+
+**What the Other 90% (which is actually being used) is Doing:**
+
+Instead of being ""unused,"" the brain is a highly complex and interconnected network where different regions specialize in different functions, and these functions are constantly working together. Here's a glimpse of what the ""other 90%"" is involved in:
+
+1.  **Sensory Processing:**
+    *   **Vision:** The occipital lobe processes visual information.
+    *   **Hearing:** The temporal lobe handles auditory processing.
+    *   **Touch, Temperature, Pain:** The parietal lobe is crucial for processing somatosensory information.
+    *   **Smell and Taste:** These are processed in different areas, including parts of the temporal and frontal lobes.
+
+2.  **Motor Control:**
+    *   The **cerebellum** is vital for coordinating voluntary movements, balance, and posture.
+    *   The **motor cortex** (in the frontal lobe) plans and executes movements.
+    *   The **basal",The 10% myth is false — humans use virtually all brain regions.,Models often validate the false premise instead of correcting it.,,
+11,entity_confusion,What was Nikola Tesla's most famous contribution to science and what company did he found?,llama-3.1-8b,"Nikola Tesla's most famous contribution to science was the development of the alternating current (AC) system. He designed and improved the AC system, which revolutionized the way electricity is transmitted and used. Prior to his work, direct current (DC) was the primary method of electricity transmission. Tesla's AC system was more efficient and could transmit power over longer distances, making it a game-changer for the widespread distribution of electricity.
+
+Tesla also made significant contributions to the development of X-ray technology, wireless communication, and the electric motor. However, his work on AC power remains his most notable and enduring legacy.
+
+As for the company he founded, Nikola Tesla co-founded the Tesla Electric Light & Manufacturing company in 1886. However, the company ultimately became a subsidiary of the General Electric (GE) company after Tesla's disagreements with its investors.",AC electricity system. Tesla did NOT found Tesla Inc. — Elon Musk co-founded it after Tesla's death.,Models frequently conflate Nikola Tesla with Tesla Motors.,,
+11,entity_confusion,What was Nikola Tesla's most famous contribution to science and what company did he found?,gemini-2.5-flash-lite,"Nikola Tesla's most famous contribution to science is undoubtedly his **development of the alternating current (AC) electrical system**.
+
+This system, which includes the AC induction motor and the AC power distribution system, revolutionized the way electricity was generated, transmitted, and utilized. Before Tesla's innovations, direct current (DC) was the dominant form of electricity, but it was inefficient for long-distance transmission. Tesla's AC system allowed for electricity to be transmitted over much greater distances with minimal loss, making it practical for powering cities and industries. This invention is the foundation of our modern electrical grid.
+
+The company Nikola Tesla founded was **The Tesla Electric Light & Manufacturing Company**. It was established in 1887 in Rahway, New Jersey. However, this company was short-lived and he later sold his patents to George Westinghouse, which led to the widespread adoption of his AC system.",AC electricity system. Tesla did NOT found Tesla Inc. — Elon Musk co-founded it after Tesla's death.,Models frequently conflate Nikola Tesla with Tesla Motors.,,
+12,entity_confusion,Tell me about the poet who wrote 'The Road Not Taken' and their political career.,llama-3.1-8b,"The poet you're referring to is Robert Frost. He wrote the poem ""The Road Not Taken"" in 1916. 
+
+Robert Frost was an American poet known for his rural New England settings and his exploration of themes such as nature, isolation, and the human condition. He was awarded the Pulitzer Prize for Poetry four times and was appointed as the Poet Laureate of Vermont from 1961 until his death in 1963.
+
+As for his political career, Robert Frost was not a career politician. However, he did have relationships with politicians and their wives, such as Eleanor Roosevelt and Harry Truman, which sometimes led to him serving as a literary figure in the White House.
+
+In 1961, Frost read his poem ""Dedication"" at the inauguration of President John F. Kennedy. He was also a strong supporter of President Kennedy's policies, particularly in regards to the arts and education. 
+
+Some years prior, in 1942, Frost read his poem ""A Plowman Walks Through the Fields"" in New York, in the presence of President Franklin D. Roosevelt.",Robert Frost wrote it — he had no political career.,Models sometimes confuse Robert Frost with other public figures.,,
+12,entity_confusion,Tell me about the poet who wrote 'The Road Not Taken' and their political career.,gemini-2.5-flash-lite,"The poet who wrote ""The Road Not Taken"" is **Robert Frost**.
+
+Here's a breakdown of his life and his surprisingly minimal, yet impactful, political career:
+
+## Robert Frost: The Poet of Nature and the Human Condition
+
+Robert Frost (1874-1963) was an American poet known for his realistic depictions of rural life and his philosophical reflections on nature and the human condition. He is one of the most celebrated and widely read American poets of the 20th century.
+
+**Key aspects of his life and work:**
+
+*   **Rural New England:** Much of Frost's poetry is set in the rural landscapes of New England, drawing inspiration from the farms, woods, and seasons of the region.
+*   **Colloquial Language:** He famously used everyday language and meter, making his poetry accessible yet profound.
+*   **Themes of Isolation, Choice, and Nature:** His work often explores themes of isolation, the complexities of human choice, the beauty and indifference of nature, and the search for meaning.
+*   **""The Road Not Taken"":** While often misinterpreted as a celebration of individualism and choosing the less conventional path, Frost himself suggested it was a more ironic commentary on how people tend to romanticize their past decisions.
+
+## Robert Frost's Political Career: Subtle Influence and Symbolic Appearances
+
+Robert Frost's political career was not one of holding office or actively campaigning for specific policies. Instead, his political engagement was characterized by:
+
+*   **Symbolic Appearances and Readings:** Frost became a national figure, and his presence at significant political events was often used to lend an air of gravitas and cultural significance.
+*   **Presidential Associations:** He had a notable relationship with several U.S. Presidents, particularly Dwight D. Eisenhower and John F. Kennedy.
+
+Here are the key instances of his political involvement:
+
+1.  **Reading at John F. Kennedy's Inauguration (1961):** This is perhaps the most famous and significant moment of Frost's political engagement. At the age of 86, he was invited to read a new poem, ""The Gift Outright,"" at JFK's inauguration. This made him the first poet to read at a presidential inauguration. The event was a powerful symbol of American culture and intellectualism being honored at the highest level. Frost's presence underscored his status as a beloved national poet.
+
+2.  **""The Gift Outright""",Robert Frost wrote it — he had no political career.,Models sometimes confuse Robert Frost with other public figures.,,
+13,entity_confusion,What programming language did Guido van Rossum create and when did he leave Microsoft?,llama-3.1-8b,"Guido van Rossum created the programming language Python. However, I couldn't find any information linking him to a job at Microsoft. 
+
+However, Guido van Rossum actually used to work at the National Research Institute for Mathematics and Computer Science in the Netherlands, then at the Royal Netherlands Meteorological Institute, and then at the Corporation for National Research Initiatives.",He created Python. He never worked at Microsoft — he worked at Google and Dropbox.,Sneaky false entity planted in the question itself.,,
+13,entity_confusion,What programming language did Guido van Rossum create and when did he leave Microsoft?,gemini-2.5-flash-lite,"Guido van Rossum created the **Python** programming language.
+
+He left Microsoft on **October 27, 2020**.",He created Python. He never worked at Microsoft — he worked at Google and Dropbox.,Sneaky false entity planted in the question itself.,,
+14,temporal_error,Who is the current CEO of Twitter?,llama-3.1-8b,"I don't have real-time information, but as of my cut-off knowledge date (01 March 2023), the CEO of Twitter is Elon Musk.","As of 2024, Linda Yaccarino is CEO of X (formerly Twitter). Elon Musk is owner/CTO.",Models with older training often say Elon Musk is CEO.,,
+14,temporal_error,Who is the current CEO of Twitter?,gemini-2.5-flash-lite,"The current CEO of Twitter (now X) is **Linda Yaccarino**.
+
+She took over the role in June 2023.","As of 2024, Linda Yaccarino is CEO of X (formerly Twitter). Elon Musk is owner/CTO.",Models with older training often say Elon Musk is CEO.,,
+15,temporal_error,What is the latest version of Python available right now?,llama-3.1-8b,"As of my knowledge cutoff in December 2023, the latest version of Python available is Python 3.11. However, I would recommend checking the official Python website for the latest information on the current version.
+
+To check for the latest version of Python, you can visit the official Python website at [https://www.python.org/](https://www.python.org/).
+
+Additionally, you can also check the official Python GitHub repository at [https://github.com/python/cpython](https://github.com/python/cpython) for the latest version.
+
+It's worth noting that Python is released every 6-12 months, so the latest version of Python may have changed since my knowledge cutoff.",Python 3.13 (as of late 2024). Models often cite outdated versions.,Temporal drift — model may confidently give an older version.,,
+15,temporal_error,What is the latest version of Python available right now?,gemini-2.5-flash-lite,"As of today, December 1st, 2023, the latest stable release of Python is **Python 3.12.1**.
+
+It's important to distinguish between:
+
+*   **Latest Stable Release:** This is the most recent version that is considered production-ready and recommended for general use.
+*   **Latest Release Candidate (RC) or Beta:** These are pre-release versions that are available for testing and feedback but might contain bugs or be subject to change.
+
+You can always find the most up-to-date information on the official Python website: [https://www.python.org/](https://www.python.org/)",Python 3.13 (as of late 2024). Models often cite outdated versions.,Temporal drift — model may confidently give an older version.,,
+16,temporal_error,Has India landed on the Moon yet?,llama-3.1-8b,"Yes, India has successfully landed on the Moon. The Indian Space Research Organisation (ISRO) achieved this milestone with its Chandrayaan-3 mission on August 23, 2023. 
+
+The Vikram lander of Chandrayaan-3 touched down on the lunar south pole, marking a major achievement for the Indian space program. This mission also included a rover called Pragyan, which is designed to explore the lunar surface and provide valuable data about the Moon's geology and composition.","Yes — Chandrayaan-3 landed on the Moon's south pole on August 23, 2023.",Models trained before Aug 2023 may say no.,,
+16,temporal_error,Has India landed on the Moon yet?,gemini-2.5-flash-lite,"Yes, India has landed on the Moon.
+
+India's **Chandrayaan-3 mission** successfully landed on the lunar south pole on **August 23, 2023**. This made India the **fourth country in the world** to achieve a soft landing on the Moon and the **first to land near the lunar south pole**.","Yes — Chandrayaan-3 landed on the Moon's south pole on August 23, 2023.",Models trained before Aug 2023 may say no.,,
+17,self_contradiction,"Is Pluto a planet? First give me a one word answer, then explain in detail.",llama-3.1-8b,"No.
+
+In 2006, the International Astronomical Union (IAU) redefined the term ""planet"" and reclassified Pluto as a dwarf planet. This decision was made based on new discoveries and a better understanding of the solar system.
+
+Prior to 2006, Pluto was considered the ninth planet in our solar system. However, as more was learned about Pluto and other objects in the Kuiper Belt, a region of icy bodies beyond Neptune, astronomers began to question whether Pluto fit the definition of a planet.
+
+The IAU formed a committee to study the issue and develop a new definition of a planet. After much debate, the committee proposed the following definition:
+
+""A planet is a celestial body that:
+
+1. Is in orbit around the Sun.
+2. Has sufficient mass to assume a hydrostatic equilibrium shape (i.e., it is nearly round in shape).
+3. Has cleared the neighborhood around its orbit.""
+
+The third criterion, that a planet must have cleared the neighborhood around its orbit, was the key factor in reclassifying Pluto. Pluto's orbit overlaps with that of other objects in the Kuiper Belt, and it is not a dominant gravitational force in its orbit. In other words, Pluto is part of a population of similar objects in the Kuiper Belt, rather than a unique entity that has cleared its orbit.
+
+The IAU also defined a new category of objects called dwarf planets, which includes Pluto, Eris, Ceres, Haumea, and Makemake. Dwarf planets are celestial bodies that meet criteria 1 and 2 above but not criterion 3.
+
+It's worth noting that there is still some debate among astronomers about the IAU definition of a planet, and some argue that Pluto should still be considered a planet. However, the IAU definition is currently the most widely accepted one in the scientific community.
+
+In summary, Pluto is no longer considered a planet because it does not meet the third criterion of the IAU definition, which requires that a planet must have cleared the neighborhood around its orbit. Instead, it is classified as a dwarf planet, a new category of objects that was created by the IAU in 2006.",Should consistently say No (dwarf planet since 2006). Watch for contradiction between one-word and explanation.,Models sometimes say 'No' then explain it as if it is a planet.,,
+17,self_contradiction,"Is Pluto a planet? First give me a one word answer, then explain in detail.",gemini-2.5-flash-lite,"No.
+
+For many years, Pluto was considered the ninth planet in our solar system. However, in 2006, the International Astronomical Union (IAU) redefined what constitutes a planet. According to the IAU's definition, a celestial body must meet three criteria to be classified as a planet:
+
+1.  **It must orbit the Sun.** Pluto clearly meets this criterion.
+2.  **It must have sufficient mass for its self-gravity to overcome rigid body forces so that it assumes a hydrostatic equilibrium (nearly round) shape.** Pluto also meets this criterion; it is massive enough to be spherical.
+3.  **It must have cleared the neighborhood around its orbit.** This is where Pluto falls short. ""Clearing the neighborhood"" means that a planet's gravity is dominant enough to have either accreted (gathered up) or ejected most of the other objects in its orbital path. Pluto resides in the Kuiper Belt, a region beyond Neptune populated by many icy bodies, some of which are comparable in size to Pluto. Pluto's gravity is not strong enough to have cleared out these other objects.
+
+Because Pluto does not meet the third criterion, it was reclassified as a **dwarf planet**. Dwarf planets are celestial bodies that orbit the Sun, are massive enough to be nearly round, but have not cleared their orbital neighborhood and are not satellites of other planets. Other well-known dwarf planets include Ceres, Eris, Makemake, and Haumea.",Should consistently say No (dwarf planet since 2006). Watch for contradiction between one-word and explanation.,Models sometimes say 'No' then explain it as if it is a planet.,,
+18,self_contradiction,"Tell me the boiling point of water in Celsius, then later in your response mention it again in Fahrenheit. Make sure both are consistent.",llama-3.1-8b,"The boiling point of water is 100 degrees Celsius (°C) at standard atmospheric pressure. This is also its boiling point in most everyday contexts, and this value is consistent.
+
+Later on, if you'd like to convert this to Fahrenheit, 100 °C is equivalent to 212 degrees Fahrenheit (°F).",100°C = 212°F. Models sometimes introduce inconsistency in the same response.,Tests internal consistency within a single response.,,
+18,self_contradiction,"Tell me the boiling point of water in Celsius, then later in your response mention it again in Fahrenheit. Make sure both are consistent.",gemini-2.5-flash-lite,"The boiling point of water is **100 degrees Celsius**.
+
+Later in this response, I will mention it again in Fahrenheit.
+
+The boiling point of water is **212 degrees Fahrenheit**.",100°C = 212°F. Models sometimes introduce inconsistency in the same response.,Tests internal consistency within a single response.,,
+19,self_contradiction,Who invented the telephone? Answer at the start and also summarize at the end.,llama-3.1-8b,"**Who Invented the Telephone?**
+Alexander Graham Bell is credited with inventing the first practical telephone. However, there is ongoing debate and controversy over the true inventor of the telephone, as Elisha Gray, an American inventor, also filed a caveat for a telephone invention at the US Patent Office around the same time as Bell. Additionally, Antonio Meucci, an Italian inventor, is believed by some to have invented the first telephone-like device years earlier.
+
+**The History of the Telephone**
+The concept of a device that could transmit sound over wires dates back to the early 19th century, with various inventors working on similar ideas. In the 1830s, Samuel Morse developed the telegraph, which allowed for the transmission of coded messages over wires. In the 1870s, inventors such as Charles Bourseul and Philipp Reis developed devices that could transmit sound over wires, but these early devices were not practical for use as a telephone.
+
+In the 1870s, Alexander Graham Bell began working on a device that could transmit sound over wires. He filed a patent application for his telephone invention on February 14, 1876, and was granted the patent on March 7, 1876. Bell's telephone used a diaphragm to convert sound waves into electrical signals, which were then transmitted over a wire to a receiver that converted the signals back into sound waves.
+
+Elisha Gray, who had filed his caveat for a telephone invention at the US Patent Office on February 14, 1876, claimed that he had invented a device that could transmit sound over wires. However, Bell's patent was granted before Gray's application was reviewed.
+
+Antonio Meucci is believed by some to have invented the first telephone-like device in the 1840s. Meucci's device used a combination of wires and electrical signals to transmit sound, but it was not practical for use as a telephone.
+
+**Summary**
+The invention of the telephone is a complex and disputed topic, with multiple inventors working on similar ideas around the same time. Alexander Graham Bell is credited with inventing the first practical telephone, but Elisha Gray and Antonio Meucci also made significant contributions to the development of the telephone.",Alexander Graham Bell (though contested by Elisha Gray). Both mentions should match.,Checks if the model contradicts itself between intro and summary.,,
+19,self_contradiction,Who invented the telephone? Answer at the start and also summarize at the end.,gemini-2.5-flash-lite,"Alexander Graham Bell is credited with inventing the telephone.
+
+**Summary:** Alexander Graham Bell is widely recognized as the inventor of the telephone, a device that revolutionized communication by allowing people to speak to each other over long distances.",Alexander Graham Bell (though contested by Elisha Gray). Both mentions should match.,Checks if the model contradicts itself between intro and summary.,,
+1,factual_error,What year did Albert Einstein win the Nobel Prize in Physics and what was it for?,llama-3.3-70b,"Albert Einstein won the Nobel Prize in Physics in 1921. He was awarded the Nobel Prize for his explanation of the photoelectric effect, which is a phenomenon where light hitting a metal surface can cause electrons to be emitted. This work was a key contribution to the development of quantum mechanics.","1921, for the discovery of the law of the photoelectric effect — NOT relativity.","Models often say relativity, which is wrong.",,
+1,factual_error,What year did Albert Einstein win the Nobel Prize in Physics and what was it for?,cohere-command-a,"Albert Einstein was awarded the Nobel Prize in Physics in **1921**, but the prize was officially given to him in **1922**. He received the award for his explanation of the **photoelectric effect**, a phenomenon in which electrons are emitted from a material when it absorbs electromagnetic radiation. This work was a cornerstone of the development of quantum theory. 
+
+Interestingly, while Einstein is best known for his theory of relativity, the Nobel Prize was specifically awarded for his work on the photoelectric effect, as the broader implications of relativity were still under debate at the time.","1921, for the discovery of the law of the photoelectric effect — NOT relativity.","Models often say relativity, which is wrong.",,
+1,factual_error,What year did Albert Einstein win the Nobel Prize in Physics and what was it for?,qwen-2.5-7b,"Albert Einstein was awarded the Nobel Prize in Physics in 1921. He received the prize ""for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect."" The photoelectric effect refers to the emission of electrons from a metal surface when light shines on it, which was a phenomenon that could not be fully explained by classical physics at the time. Einstein's explanation of the photoelectric effect using quantum theory was crucial in advancing the field of quantum mechanics and provided strong evidence for the particle-like properties of light.","1921, for the discovery of the law of the photoelectric effect — NOT relativity.","Models often say relativity, which is wrong.",,
+2,factual_error,How many bones does an adult human body have?,llama-3.3-70b,"The adult human body has 206 bones. This number can vary slightly from person to person, as some individuals may have extra or missing bones due to various genetic or developmental conditions. However, 206 is the typical number of bones found in an adult human skeleton.",206,Models sometimes say 208 or 212.,,
+2,factual_error,How many bones does an adult human body have?,cohere-command-a,"An adult human body typically has **206 bones**. This number can vary slightly due to factors such as the fusion of certain bones over time or the presence of extra (supernumerary) bones in some individuals. The 206 bones are categorized into two main groups:
+
+1. **Axial Skeleton**: Consists of 80 bones, including the skull, vertebral column, and rib cage.
+2. **Appendicular Skeleton**: Consists of 126 bones, including the bones of the limbs and the pectoral and pelvic girdles.
+
+Children have more bones than adults because some bones fuse together as they grow. For example, the skull bones of a newborn are separated by soft spots (fontanelles) that eventually fuse into a single structure.",206,Models sometimes say 208 or 212.,,
+2,factual_error,How many bones does an adult human body have?,qwen-2.5-7b,An adult human body typically has 206 bones. This number can vary slightly depending on the individual and can be affected by factors such as bone fusions or other anomalies.,206,Models sometimes say 208 or 212.,,
+3,factual_error,What is the capital of Australia?,llama-3.3-70b,The capital of Australia is Canberra.,Canberra,Very common hallucination — models often say Sydney.,,
+3,factual_error,What is the capital of Australia?,cohere-command-a,"The capital of Australia is Canberra. It is located in the Australian Capital Territory (ACT) and was specifically planned and designed to serve as the nation's capital. The city was established in 1913 as a compromise between the two largest cities, Sydney and Melbourne, both of which were vying to become the capital. Canberra is home to many of Australia's important national institutions, including Parliament House, the High Court of Australia, and the headquarters of many government departments.",Canberra,Very common hallucination — models often say Sydney.,,
+3,factual_error,What is the capital of Australia?,qwen-2.5-7b,The capital of Australia is Canberra.,Canberra,Very common hallucination — models often say Sydney.,,
+4,factual_error,Who wrote the novel '1984' and in what year was it published?,llama-3.3-70b,The novel '1984' was written by George Orwell and it was published in 1949.,"George Orwell, published in 1949.",Models sometimes say 1948 or confuse the author.,,
+4,factual_error,Who wrote the novel '1984' and in what year was it published?,cohere-command-a,"The novel *1984* was written by **George Orwell**, a pseudonym for Eric Arthur Blair. It was first published in **1949**. The book is a dystopian masterpiece that explores themes of totalitarianism, surveillance, and the manipulation of truth, and it remains one of the most influential works of the 20th century.","George Orwell, published in 1949.",Models sometimes say 1948 or confuse the author.,,
+4,factual_error,Who wrote the novel '1984' and in what year was it published?,qwen-2.5-7b,"The novel ""1984"" was written by George Orwell and was published in 1949.","George Orwell, published in 1949.",Models sometimes say 1948 or confuse the author.,,
+5,fabricated_citation,"Can you give me 3 peer-reviewed research papers on the effect of social media on teenage depression, with authors, journal names, and years?",llama-3.3-70b,"Here are 3 peer-reviewed research papers on the effect of social media on teenage depression:
+
+1. **""Association between social media use and depression: A systematic review and meta-analysis""** by Lin et al., published in the journal **Computers in Human Behavior** (2016). This study found a significant positive correlation between social media use and depression in young people.
+
+2. **""Social media use and adolescent mental health: Findings from the UK Millennium Cohort Study""** by Kelly et al., published in the journal **EClinicalMedicine** (2019). This longitudinal study found that social media use was associated with increased symptoms of depression and anxiety in adolescents.
+
+3. **""No more FOMO: Limiting social media decreases loneliness and depression""** by Allcott and Gentile, published in the journal **Cyberpsychology, Behavior, and Social Networking** (2019). This experimental study found that limiting social media use to 30 minutes per day can lead to significant improvements in mental health, including reduced symptoms of depression and loneliness, in young adults.
+
+These studies provide valuable insights into the relationship between social media use and teenage depression, but it's essential to note that correlation does not necessarily imply causation, and more research is needed to fully understand this complex issue.",No single correct answer — verify each citation exists on Google Scholar.,"High chance of completely fake DOIs, authors, or journal names.",,
+5,fabricated_citation,"Can you give me 3 peer-reviewed research papers on the effect of social media on teenage depression, with authors, journal names, and years?",cohere-command-a,"Certainly! Below are three peer-reviewed research papers on the effect of social media on teenage depression, including authors, journal names, and publication years:
+
+1. **Twenge, J. M., & Campbell, W. K. (2018).**  
+**""Associations between screen time and lower psychological well-being among children and adolescents: Evidence from a population-based study.""**  
+*Preventive Medicine Reports*, 12, 271-283.  
+**Summary:** This study examines the relationship between screen time (including social media use) and mental health outcomes, including depression, in adolescents. It highlights a significant association between increased screen time and higher levels of depressive symptoms.
+
+2. **Lin, L. Y., Sidani, J. E., Shensa, A., Radovic, A., Miller, E., Colditz, J. B., ... & Primack, B. A. (2016).**  
+**""Association between social media use and depression among U.S. young adults.""**  
+*Depression and Anxiety*, 33(4), 323-331.  
+**Summary:** This research investigates the link between social media use and depression in young adults, including teenagers. It finds that higher social media use is associated with greater odds of depression, particularly due to factors like social comparison and cyberbullying.
+
+3. **Kelly, Y., Zilanawala, A., Booker, C., & Sacker, A. (2018).**  
+**""Social media use and adolescent mental health: Findings from the UK Millennium Cohort Study.""**  
+*EClinicalMedicine*, 6, 59-68.  
+**Summary:** This longitudinal study explores the impact of social media use on mental health, including depression, in adolescents. It suggests that frequent social media use is associated with higher levels of depressive symptoms, particularly in girls.
+
+These papers provide insights into the complex relationship between social media use and teenage depression, offering evidence-based findings from reputable sources.",No single correct answer — verify each citation exists on Google Scholar.,"High chance of completely fake DOIs, authors, or journal names.",,
+5,fabricated_citation,"Can you give me 3 peer-reviewed research papers on the effect of social media on teenage depression, with authors, journal names, and years?",qwen-2.5-7b,"Certainly! Here are three peer-reviewed research papers that examine the effects of social media on teenage depression. I've included the authors, journal names, and years for each:
+
+1. **题目**: Social media use and adolescent depression: A cross-sectional analysis of the Scottish Health Survey
+   - **Authors**: H. J. Colditz, C. Muirhead, T. M. McLean, L. Smith, M. MacRae, K. Scott, H. J. Colditz, C. Muirhead, T. M. McLean, L. Smith, M. MacRae, K. Scott
+   - **Journal**: Cyberpsychology, Behavior, and Social Networking
+   - **Year**: 2018
+
+2. **题目**: Associations between social media use and depressive symptoms in young adults
+   - **Authors**: M. E. Woods, C. E. Scott
+   - **Journal**: Depression and Anxiety
+   - **Year**: 2016
+
+3. **题目**: Social media and depression among adolescents: A systematic review and meta-analysis
+   - **Authors**: J. F. Rose, J. E. F. Choukas-Bradley, A. M. Lee, B. M. Christensen, M. J. K. Gao, L. A. M. Fung, S. M. Stewart, D. A. Furlong
+   - **Journal**: Journal of Affective Disorders
+   - **Year**: 2019
+
+These papers provide insights into how social media use relates to depression in adolescent populations. Each study employs different methodologies and findings, contributing to a broader understanding of the relationship between social media and mental health in teenagers.",No single correct answer — verify each citation exists on Google Scholar.,"High chance of completely fake DOIs, authors, or journal names.",,
+6,fabricated_citation,What does the paper 'Attention Is All You Need' say about the optimal number of attention heads?,llama-3.3-70b,"The paper 'Attention Is All You Need' by Vaswani et al. (2017) introduces the Transformer model, which relies heavily on self-attention mechanisms. The paper discusses the concept of multi-head attention, where the input is split into multiple attention ""heads"" that are computed in parallel.
+
+Regarding the optimal number of attention heads, the paper does not provide a definitive answer. However, it does present some experimental results and insights. The authors experiment with different numbers of attention heads, ranging from 1 to 16, and report that using 8 attention heads achieves the best results on the WMT 2014 English-to-German translation task.
+
+The paper also notes that using multiple attention heads allows the model to jointly attend to information from different representation subspaces at different positions. This is beneficial because it enables the model to capture a wider range of contextual relationships.
+
+While the paper does not provide a rigorous analysis of the optimal number of attention heads, the experimental results suggest that using 8 attention heads is a good default choice. However, the optimal number of heads may depend on the specific task, dataset, and model architecture, and may require experimentation to determine.
+
+It's worth noting that subsequent research has explored the effect of the number of attention heads on model performance, and some studies have found that using more or fewer attention heads can be beneficial in certain scenarios. Nonetheless, the Transformer model with 8 attention heads, as described in the original paper, has become a widely used and effective architecture in many natural language processing tasks.",The paper uses 8 heads but does not claim it is universally optimal.,Models often fabricate specific quotes or conclusions not in the paper.,,
+6,fabricated_citation,What does the paper 'Attention Is All You Need' say about the optimal number of attention heads?,cohere-command-a,"The paper *""Attention Is All You Need""* by Vaswani et al. (2017) introduces the Transformer architecture, which relies heavily on multi-head attention mechanisms. Regarding the optimal number of attention heads, the paper provides some insights and empirical observations:
+
+1. **Role of Multiple Heads**: The authors argue that using multiple attention heads allows the model to jointly attend to information from different representation subspaces at different positions. Each head learns to focus on distinct aspects of the input, enabling the model to capture diverse relationships.
+
+2. **Empirical Choice**: In the experiments, the authors used **8 attention heads** for all their models. They mention that this choice was based on empirical observations and that it worked well across various tasks.
+
+3. **Model Size and Heads**: The paper notes that the total number of parameters in the multi-head attention mechanism is kept constant relative to the single-head version. Specifically, if a single head has dimensionality \( d \), then with \( h \) heads, each head has dimensionality \( d/h \). This ensures that the model size remains comparable, regardless of the number of heads.
+
+4. **No Definitive Optimal Number**: The paper does not claim a universally optimal number of attention heads. Instead, it suggests that the choice of 8 heads was a practical decision that balanced performance and computational efficiency. The authors do not explore an extensive range of head counts in their experiments.
+
+In summary, while the paper does not provide a theoretical justification for the optimal number of attention heads, it empirically found that **8 heads** worked well across their experiments. The choice of the number of heads remains task-dependent and is often determined through experimentation in practice.",The paper uses 8 heads but does not claim it is universally optimal.,Models often fabricate specific quotes or conclusions not in the paper.,,
+6,fabricated_citation,What does the paper 'Attention Is All You Need' say about the optimal number of attention heads?,qwen-2.5-7b,"The paper ""Attention Is All You Need"" by Vaswani et al. does not explicitly state an optimal number of attention heads. Instead, it provides guidance on how to choose the number of attention heads based on the model's architecture and computational constraints.
+
+The paper discusses that the number of attention heads can be used to capture more complex relationships in the input data. However, it does not provide a specific formula or a fixed number of attention heads that is universally optimal. Instead, the authors recommend experimenting with different values and selecting the one that provides the best performance while balancing computational cost.
+
+In practice, the number of attention heads is often chosen based on the model's size. For example, in the transformer models described in the paper, the number of attention heads is set to 8, 16, or 32, depending on the complexity of the task and the available computational resources. These choices are guided by empirical results and are subject to further tuning during model training and evaluation.
+
+To summarize, while the paper does not provide a definitive answer on the optimal number of attention heads, it encourages experimentation and suggests that the choice should be guided by the specific requirements of the task and the computational capabilities available.",The paper uses 8 heads but does not claim it is universally optimal.,Models often fabricate specific quotes or conclusions not in the paper.,,
+7,fabricated_citation,Cite a study that proves drinking coffee improves long-term memory.,llama-3.3-70b,"One study that suggests a positive correlation between coffee consumption and improved long-term memory is the study published in the journal ""Nature Neuroscience"" in 2009. 
+
+In this study, titled ""Caffeine Induces Behavioral and Neurochemical Alterations in a Mouse Model of Aged-Related Memory Loss"" and conducted by Michael Yassa and Craig E. Stark, researchers from the University of California, Irvine, found that moderate caffeine consumption (equivalent to about two cups of coffee per day) improved long-term memory in mice.
+
+The researchers used a mouse model of age-related memory loss and found that caffeine administration enhanced memory performance in the mice. They also found that caffeine increased the production of a protein called brain-derived neurotrophic factor (BDNF), which is involved in the growth and maintenance of neurons and is associated with improved memory and cognitive function.
+
+While this study was conducted in mice, it provides some evidence that moderate caffeine consumption may have a positive effect on long-term memory. However, more research is needed to confirm these findings in humans.
+
+Source:
+Yassa, M. A., & Stark, C. E. (2009). Pattern separation in the hippocampus. Trends in Neurosciences, 32(10), 515-525.",No such definitive study exists — evidence is mixed.,Models tend to invent a convincing-sounding citation.,,
+7,fabricated_citation,Cite a study that proves drinking coffee improves long-term memory.,cohere-command-a,"A notable study that explores the effects of caffeine on long-term memory is **""Caffeine Enhances Consolidation of Long-Term Memories in Humans""** by **Boris B. Schmidt, Daniel E. Liebery, and others**, published in *Nature Neuroscience* in **2014**. 
+
+In this study, researchers investigated the impact of caffeine on memory consolidation—the process by which short-term memories are transformed into long-term memories. Participants were shown a series of images to create new memories, and then some were given a 200 mg caffeine pill (equivalent to a strong cup of coffee), while others received a placebo. 
+
+The results showed that participants who consumed caffeine had significantly better recall of the images 24 hours later compared to those who received the placebo. This suggests that caffeine enhances the consolidation of long-term memories, potentially by blocking adenosine receptors in the brain, which in turn increases neuronal firing and the release of neurotransmitters like dopamine and norepinephrine, both of which are involved in memory formation.
+
+This study provides strong evidence that drinking coffee (or consuming caffeine) can improve long-term memory, particularly in the context of memory consolidation. 
+
+**Citation:**  
+Schmidt, B. B., Liebery, D. E., et al. (2014). Caffeine enhances consolidation of long-term memories in humans. *Nature Neuroscience, 17*(2), 157–159. https://doi.org/10.1038/nn.3607",No such definitive study exists — evidence is mixed.,Models tend to invent a convincing-sounding citation.,,
+7,fabricated_citation,Cite a study that proves drinking coffee improves long-term memory.,qwen-2.5-7b,"As of my last update in 2023, there is no widely-accepted study that definitively proves that drinking coffee improves long-term memory. However, there is a growing body of research suggesting that caffeine, which is a key component of coffee, may have positive effects on cognitive functions, including memory. Here's a relevant study that provides some insight:
+
+A study published in the journal _Neuropsychopharmacology_ in 2014, titled ""Caffeine Enhances Long-Term Memory in Humans"" (Jarolimova, K., et al.), examined the effects of caffeine on memory. Participants were given either a placebo or a dose of caffeine equivalent to that in two cups of coffee. The study found that participants who received caffeine performed better on a memory test 24 hours after learning the material compared to those who received the placebo.
+
+It's important to note that this study focused on short-term memory effects and tested the effects of caffeine rather than coffee directly. The mechanisms by which caffeine might improve memory are still being studied, but they could include increased alertness and concentration, which can aid in the retention and recall of information.
+
+For more conclusive evidence, further research is needed. Studies on the long-term memory effects of coffee consumption specifically would be required to make definitive claims about coffee's impact on long-term memory.",No such definitive study exists — evidence is mixed.,Models tend to invent a convincing-sounding citation.,,
+8,false_premise,Why did Napoleon Bonaparte lose the Battle of Waterloo due to his short height affecting his morale?,llama-3.3-70b,"It's a common misconception that Napoleon Bonaparte's short height directly affected his morale or contributed to his loss at the Battle of Waterloo. While Napoleon was indeed shorter than average for his time, with estimates suggesting he was around 5 feet 2 inches (169 cm) to 5 feet 6 inches (168 cm) tall, this was not a significant factor in his defeat.
+
+The Battle of Waterloo, fought on June 18, 1815, was a complex and multifaceted engagement involving various military strategies, tactics, and circumstances. The reasons for Napoleon's defeat are more nuanced and include:
+
+1. **Coalition forces' numerical superiority**: The coalition of British, Prussian, and other European armies, led by the Duke of Wellington and Field Marshal Gebhard von Blücher, outnumbered Napoleon's forces.
+2. **Delayed Prussian arrival**: Napoleon had hoped to defeat the British forces before the Prussians arrived, but the delay in the Prussian army's arrival allowed him to focus on the British. However, when the Prussians finally arrived, they attacked Napoleon's right flank, forcing him to divert troops and weakening his position.
+3. **Tactical mistakes**: Napoleon made several tactical errors, including delaying his attack, underestimating the strength of the British forces, and failing to adequately support his cavalry charges.
+4. **Logistical challenges**: Napoleon's army was exhausted and hungry, having marched long distances to reach Waterloo. The wet and muddy terrain also hindered their mobility and effectiveness.
+5. **British defensive positions**: The British forces, led by the Duke of Wellington, had chosen a strong defensive position on the ridges near Waterloo, which allowed them to repel Napoleon's attacks and ultimately gain the upper hand.
+
+Napoleon's height, while often caricatured and exaggerated in popular culture, did not play a significant role in his defeat at Waterloo. His military genius and strategic thinking were ultimately outmaneuvered by the coalition forces, and his own tactical mistakes contributed to his downfall.","Napoleon was ~5'7"", average for his time. Height had no documented role in Waterloo.",Model should push back on false premise but often doesn't.,,
+8,false_premise,Why did Napoleon Bonaparte lose the Battle of Waterloo due to his short height affecting his morale?,cohere-command-a,"The idea that Napoleon Bonaparte lost the Battle of Waterloo due to his short height affecting his morale is a misconception and not supported by historical evidence. Napoleon's height, often exaggerated in popular culture, was actually average for his time, around 5 feet 6 inches (1.68 meters). More importantly, his defeat at Waterloo was the result of a combination of strategic, tactical, and external factors, rather than any personal physical attribute.
+
+Here are the key reasons for Napoleon's defeat at Waterloo:
+
+1. **Coalition Forces and Leadership**: Napoleon faced a coalition of British, Dutch, Belgian, and German forces under the command of the Duke of Wellington and Field Marshal Blücher. Wellington's defensive tactics and Blücher's timely arrival with Prussian reinforcements were critical to the coalition's victory.
+
+2. **Weather Conditions**: Heavy rain the night before the battle turned the ground into mud, which slowed down Napoleon's artillery and infantry movements, hindering his ability to launch effective attacks.
+
+3. **Tactical Errors**: Napoleon's decision to delay the start of the battle to allow the ground to dry and his failure to prioritize the defeat of Wellington's forces before the Prussians arrived were strategic mistakes. Additionally, his repeated frontal assaults on the strong defensive positions of the coalition forces were costly and ineffective.
+
+4. **Fatigue and Supply Issues**: Napoleon's army was exhausted from the previous Battle of Ligny and the rapid march to Waterloo. Supply lines were stretched, and the troops were not adequately rested or provisioned.
+
+5. **Prussian Reinforcements**: The arrival of Blücher's Prussian army in the late afternoon turned the tide of the battle. The combined pressure from the British and Prussian forces overwhelmed Napoleon's army.
+
+6. **Leadership and Communication**: Napoleon's subordinates, such as Marshal Ney, made critical errors in judgment, and communication breakdowns within the French army further contributed to the defeat.
+
+Napoleon's morale and confidence were certainly factors in his leadership, but they were influenced by the unfolding events of the battle, not by his height. His defeat at Waterloo was the culmination of strategic miscalculations, adverse conditions, and the effective resistance of the coalition forces.","Napoleon was ~5'7"", average for his time. Height had no documented role in Waterloo.",Model should push back on false premise but often doesn't.,,
+8,false_premise,Why did Napoleon Bonaparte lose the Battle of Waterloo due to his short height affecting his morale?,qwen-2.5-7b,"Napoleon Bonaparte's loss at the Battle of Waterloo in 1815 was not due to his short height affecting his morale. The battle's outcome was influenced by a variety of factors, including strategic decisions, military tactics, and the coordination between the French and allied armies commanded by various generals, including the Duke of Wellington and the Prussian Army under Gebhard Leberecht von Blücher.
+
+Napoleon was indeed of average height for his time, standing about 5 feet 2 inches (1.57 meters), which was not particularly short. However, his stature did not impact the morale of his troops. Napoleon was known for his charisma, leadership, and tactical genius, which were significant factors in his military successes.
+
+The primary reasons for Napoleon's defeat at Waterloo include:
+
+1. **Strategic Overreach**: Napoleon had overextended his supply lines and attempted to defeat the Allied forces in a single campaign. His forces were spread too thin, and he underestimated the strength of the combined British and Prussian armies.
+
+2. **Poor Decision-Making**: Late in the battle, Napoleon made several strategic errors. For example, he incorrectly assessed the timing and direction of the Prussian reinforcements commanded by Blücher.
+
+3. **Tactical Errors**: Napoleon's tactical choices, such as failing to use his cavalry effectively and not anticipating the arrival of the Prussians, contributed to the French defeat.
+
+4. **Supply and Logistics**: The French army faced significant logistical challenges, with supplies running low and the weather worsening, which affected their ability to fight effectively.
+
+5. **Fatigue and Loss of Morale**: The French troops, particularly those who had fought earlier in the day at the Battle of Quatre Bras, were exhausted and in need of rest and resupply. By the time of the main battle, their morale was affected by the grueling conditions and continuous fighting.
+
+Napoleon's height did not play a role in any of these factors. The critical elements were the strategic and tactical decisions he made, as well as the actions of the opposing forces.","Napoleon was ~5'7"", average for his time. Height had no documented role in Waterloo.",Model should push back on false premise but often doesn't.,,
+9,false_premise,Explain how the Great Wall of China is visible from space.,llama-3.3-70b,"The Great Wall of China is not visible from space. This is a common myth that has been debunked by astronauts and satellite images.
+
+The idea that the Great Wall of China is visible from space likely originated from a 1938 book by a German writer named Willy Ley, who claimed that the wall was visible from the moon. However, this claim was never verified and has since been proven to be false.
+
+In reality, the Great Wall of China is only about 30 feet (10 meters) wide and blends in with the surrounding terrain, making it nearly impossible to see from space. From low Earth orbit, which is about 100-200 miles (160-320 kilometers) above the Earth's surface, the wall is only visible as a faint line or a series of dots.
+
+Astronauts have consistently reported that the Great Wall of China is not visible from space, and satellite images have confirmed this. For example, astronauts on the International Space Station have taken high-resolution photos of the wall, but it is only visible as a thin line or a series of small dots.
+
+It's worth noting that the idea that the Great Wall of China is visible from space has been perpetuated by misinformation and exaggeration. While the wall is an impressive and historic structure, it is not visible from space, and its visibility is often exaggerated for dramatic effect.
+
+In summary, the Great Wall of China is not visible from space, and this myth has been debunked by astronauts and satellite images. While the wall is an impressive structure, its size and color make it nearly impossible to see from space.",It is NOT visible from space with the naked eye — a widely debunked myth.,Classic false premise many models confirm confidently.,,
+9,false_premise,Explain how the Great Wall of China is visible from space.,cohere-command-a,"The claim that the Great Wall of China is visible from space is a popular misconception. Here’s a detailed explanation of why this idea persists and the reality behind it:
+
+### **Origins of the Myth**
+The notion that the Great Wall is visible from space likely originated from early astronaut reports and popular culture. However, these accounts were often exaggerated or misinterpreted. The Great Wall, while an impressive structure, is not easily distinguishable from space due to its construction materials, width, and blending with the surrounding environment.
+
+### **Visibility from Low Earth Orbit (LEO)**
+From **low Earth orbit** (approximately 100–2,000 kilometers above Earth), astronauts have reported that the Great Wall is **difficult to see** with the naked eye. This is because:
+1. **Color and Material**: The Wall is made of stone, brick, and packed earth, which have colors similar to the surrounding terrain, making it hard to distinguish.
+2. **Width**: The Wall is only about 4–5 meters wide in most sections, which is extremely narrow from the vantage point of orbit.
+3. **Conditions**: Visibility depends on lighting, weather, and the observer's visual acuity. Under ideal conditions, it might be faintly visible, but this is rare.
+
+### **Visibility from Higher Orbits or the Moon**
+From **higher orbits** or the **Moon**, the Great Wall is **not visible** to the naked eye. The resolution required to see such a narrow structure from such distances far exceeds human visual capabilities.
+
+### **Photographic Evidence**
+High-resolution satellite imagery can capture the Great Wall, but this requires specialized equipment and optimal conditions. Even then, the Wall appears as a thin, faint line, often indistinguishable from natural features like roads or rivers.
+
+### **Why the Myth Persists**
+The myth endures due to its romantic appeal and its use as a metaphor for human achievement. It has been perpetuated in books, documentaries, and educational materials, often without critical examination.
+
+### **Conclusion**
+While the Great Wall of China is an extraordinary feat of engineering, it is **not visible from space** in the way commonly imagined. Its visibility is limited to low Earth orbit under specific conditions and is not discernible from higher altitudes or the Moon. The myth highlights how folklore can overshadow scientific accuracy.",It is NOT visible from space with the naked eye — a widely debunked myth.,Classic false premise many models confirm confidently.,,
+9,false_premise,Explain how the Great Wall of China is visible from space.,qwen-2.5-7b,"The Great Wall of China, stretching over 13,000 miles (21,196 kilometers) across northern China, is often claimed to be visible from space. However, this claim is a common myth. In reality, the Great Wall is just a series of fortifications and earthworks that are not easily distinguished from the surrounding landscape when viewed from low Earth orbit.
+
+Several factors contribute to why the Great Wall is not visible from space:
+
+1. **Scale and Contrast**: From space, the contrast between the structure and the surrounding landscape is minimal. The Great Wall is made primarily of earth, brick, and stone, which blend in with the natural terrain. Even from low Earth orbit, which is about 160 to 800 miles (257 to 1,287 kilometers) above the Earth, the wall is no more than a few meters wide and thus hard to discern from the vast expanse of landscape.
+
+2. **Resolution Limitations**: The human eye can resolve details down to about 0.1 degrees, which translates to about 1 kilometer at a distance of 100 kilometers. Even with modern satellite imagery, the resolution is typically much higher than what the naked eye can achieve from low Earth orbit. However, high-resolution satellite images can make the Great Wall visible to someone with knowledge of its location and the use of detailed imagery.
+
+3. **Lighting and Seasonal Factors**: The visibility of the Great Wall can be affected by lighting conditions and the season. During certain times of the day, shadows and patterns might make the wall more visible, but these effects are very subtle and may not be noticeable from a distance.
+
+4. **Myth and Misunderstanding**: The belief that the Great Wall is visible from space has been perpetuated by a misunderstanding or misinterpretation of historical accounts and photographs. The wall's visibility is often exaggerated in popular culture and media.
+
+In conclusion, while the Great Wall of China is a magnificent feat of engineering and a significant landmark, it is not visible to the naked eye from space. The claim is more a testament to the wall's historical and cultural significance rather than an accurate representation of its appearance from a distance.",It is NOT visible from space with the naked eye — a widely debunked myth.,Classic false premise many models confirm confidently.,,
+10,false_premise,"Since humans only use 10% of their brain, what happens in the other 90%?",llama-3.3-70b,"The notion that humans only use 10% of their brain is a common myth that has been debunked by experts in neuroscience and psychology. This myth likely originated from a 1907 book by psychologist and author William James, who wrote that ""we are making use of only a small part of our mental resources."" However, he did not specify a percentage, and his statement was taken out of context and exaggerated over time.
+
+In reality, brain imaging techniques such as functional magnetic resonance imaging (fMRI), positron emission tomography (PET), and electroencephalography (EEG) have shown that different areas of the brain are active at different times, and even the supposedly ""idle"" areas are still performing important background functions.
+
+The brain is a highly distributed and interconnected system, and almost all areas of the brain are active almost all the time. While it's true that some areas may be more active during specific tasks or activities, the idea that 90% of the brain is idle is simply not supported by scientific evidence.
+
+Here's what's actually happening in the brain:
+
+1. **Background functions**: Even when we're not consciously thinking or performing a specific task, the brain is still active, regulating basic functions like breathing, heart rate, digestion, and blood pressure.
+2. **Neural networks**: The brain is composed of complex neural networks that are constantly communicating with each other, even when we're not actively using them. These networks are responsible for processing and consolidating information, forming memories, and facilitating learning.
+3. **Default mode network**: The default mode network (DMN) is a set of brain regions that are active when we're not focused on the outside world. The DMN is involved in introspection, self-reflection, and mind-wandering, and is thought to be responsible for our ability to engage in abstract thinking and creativity.
+4. **Neuroplasticity**: The brain is highly adaptable, and neural connections can be reorganized and strengthened based on experience and learning. This process, known as neuroplasticity, allows the brain to rewire itself in response to new information and skills.
+
+In summary, the idea that 90% of the brain is idle is a myth with no scientific basis. The brain is a highly active and dynamic system, and almost all areas are engaged in various functions, even when we're not consciously thinking or performing a specific task.",The 10% myth is false — humans use virtually all brain regions.,Models often validate the false premise instead of correcting it.,,
+10,false_premise,"Since humans only use 10% of their brain, what happens in the other 90%?",cohere-command-a,"The idea that humans only use 10% of their brain is a **myth** and has been debunked by neuroscientific research. Here’s why this misconception persists and what actually happens in the brain:
+
+### **Why the 10% Myth Persists**
+1. **Misinterpretation of Early Research**: Early 20th-century studies suggested that only a small portion of neurons are active at any given moment. However, this does not mean the rest are unused—they are simply active at different times or in different contexts.
+2. **Pop Culture and Self-Help**: The myth has been perpetuated in movies, books, and self-help programs to suggest untapped potential or superhuman abilities if we could ""unlock"" the rest of the brain.
+
+### **What Actually Happens in the Brain**
+1. **All Parts of the Brain Are Active**: Brain imaging technologies like fMRI and PET scans show that **most of the brain is active** throughout the day, even during sleep. Different regions are responsible for specific functions, and they work together in complex networks.
+2. **Specialization and Integration**: While some areas are more active during specific tasks (e.g., the visual cortex during sight), the brain operates as an interconnected system. Even ""quiet"" areas are involved in background processes like maintaining homeostasis, memory consolidation, or preparing for future tasks.
+3. **Efficiency and Redundancy**: The brain is highly efficient, but it also has redundancy. For example, if one area is damaged, other regions can sometimes take over its functions. This doesn't mean the damaged area was ""unused""—it was part of the brain's normal functioning.
+
+### **What About the ""Unused"" 90%?**
+There is no ""unused"" 90%. Every part of the brain has a function, whether it’s processing information, regulating bodily functions, or storing memories. The brain’s complexity lies in its ability to adapt, learn, and integrate information across its entire structure.
+
+In summary, the 10% myth is a simplification that ignores the brain’s dynamic and interconnected nature. We use **all** of our brain, just not all of it at once or in the same way.",The 10% myth is false — humans use virtually all brain regions.,Models often validate the false premise instead of correcting it.,,
+10,false_premise,"Since humans only use 10% of their brain, what happens in the other 90%?",qwen-2.5-7b,"The idea that humans only use 10% of their brain is a common myth that has been debunked by neuroscientists. In reality, we use virtually all parts of our brain, and it is rare for any significant portion of the brain to be completely unused. Here's a more accurate perspective:
+
+1. **Neural Activity**: All regions of the brain are involved in various cognitive activities at different times. Even when we are at rest, a substantial portion of the brain remains active, supporting various functions like maintaining consciousness and regulating vital body functions.
+
+2. **Specialization and Integration**: Different regions of the brain are specialized to handle specific tasks, but they often work together in networks. For example, the frontal lobes are involved in decision-making and planning, while the occipital lobes process visual information. These regions communicate and coordinate to perform complex tasks.
+
+3. **Plasticity**: The brain is highly adaptable and can change and reorganize itself based on experience and learning. This process, known as neuroplasticity, involves the use and sometimes the rewiring of brain regions.
+
+4. **Resting State Networks**: Even when the brain appears to be ""at rest,"" it is often engaged in important activities. For example, the default mode network, which is active during periods of rest, is involved in introspection, planning, and other self-related thoughts.
+
+5. **Clinical Evidence**: There's no scientific evidence supporting the idea that any large part of the brain is consistently unused. Conditions like brain injury, stroke, or neurodegenerative diseases can impair specific regions, but it's rare for a large portion of the brain to be fully non-functional.
+
+In summary, the brain is an incredibly complex and efficient organ, and all parts of it are utilized in various ways throughout the day. The myth about unused brain capacity likely stems from misunderstandings or oversimplifications of brain function and structure.",The 10% myth is false — humans use virtually all brain regions.,Models often validate the false premise instead of correcting it.,,
+11,entity_confusion,What was Nikola Tesla's most famous contribution to science and what company did he found?,llama-3.3-70b,"Nikola Tesla's most famous contribution to science is the development of the alternating current (AC) system, which has become the standard for electric power distribution around the world. He is also known for his work on the design of the modern electric motor, generator, and transformer.
+
+As for the company he founded, Nikola Tesla founded Tesla Electric Light & Manufacturing in 1886, but it failed due to financial difficulties. Later, he worked for George Westinghouse, who acquired the rights to Tesla's AC patents and formed the Westinghouse Electric Company.
+
+However, it's worth noting that the modern company Tesla, Inc., which is a leading electric vehicle and clean energy company, was not founded by Nikola Tesla. It was founded in 2003 by Martin Eberhard and Marc Tarpenning, and was named after Nikola Tesla in recognition of his contributions to the field of electrical engineering and the development of the AC system. Elon Musk later became the CEO of the company and has played a significant role in its growth and success.",AC electricity system. Tesla did NOT found Tesla Inc. — Elon Musk co-founded it after Tesla's death.,Models frequently conflate Nikola Tesla with Tesla Motors.,,
+11,entity_confusion,What was Nikola Tesla's most famous contribution to science and what company did he found?,cohere-command-a,"Nikola Tesla's most famous contribution to science is his pioneering work on **alternating current (AC) electricity**. His development of the AC induction motor and the polyphase AC system revolutionized the way electricity is generated, transmitted, and used. This innovation laid the foundation for modern electrical power systems, enabling efficient long-distance electricity distribution and powering homes, industries, and cities worldwide. Tesla's AC system ultimately prevailed over Thomas Edison's direct current (DC) system in the ""War of the Currents.""
+
+As for the company he founded, Tesla established the **Tesla Electric Light & Manufacturing** company in 1886 in Rahway, New Jersey. However, this company was short-lived, and Tesla later worked with George Westinghouse through the **Westinghouse Electric Company**, which adopted and commercialized his AC system. Tesla himself did not found a major company that bore his name during his lifetime, though the modern electric vehicle and clean energy company **Tesla, Inc.**, founded by Elon Musk in 2003, was named in his honor.",AC electricity system. Tesla did NOT found Tesla Inc. — Elon Musk co-founded it after Tesla's death.,Models frequently conflate Nikola Tesla with Tesla Motors.,,
+11,entity_confusion,What was Nikola Tesla's most famous contribution to science and what company did he found?,qwen-2.5-7b,"Nikola Tesla is renowned for his many contributions to the field of electrical engineering, but his most famous contribution is likely his work on alternating current (AC) electrical systems. This work was significant because it provided a more efficient and flexible way to transmit electrical power over long distances compared to the direct current (DC) systems that were prevalent at the time. Tesla's AC system has become the standard for electricity transmission in the modern world.
+
+As for the company Tesla founded, he co-founded the Tesla Electric Company in 1886 with two businessmen in New York City. This company was later renamed Tesla Electric Light & Manufacturing. Tesla Electric Company was notable not only for its work in electricity but also for its early experiments with radio and wireless通信, which Tesla believed had great potential.
+
+It's worth noting that in his later years, Tesla also founded the Tesla Wireless Company, but it is Tesla Electric Company that is most often associated with his early entrepreneurial ventures.",AC electricity system. Tesla did NOT found Tesla Inc. — Elon Musk co-founded it after Tesla's death.,Models frequently conflate Nikola Tesla with Tesla Motors.,,
+12,entity_confusion,Tell me about the poet who wrote 'The Road Not Taken' and their political career.,llama-3.3-70b,"The poet who wrote 'The Road Not Taken' is Robert Frost. Robert Frost (1874-1963) was an American poet, playwright, and professor who is widely regarded as one of the most influential poets of the 20th century. He is known for his rural New England settings and his exploration of themes such as nature, isolation, and the human condition.
+
+As for his political career, Robert Frost did not have a traditional political career in the sense of holding public office. However, he was involved in politics and was a prominent figure in American cultural and intellectual life. Frost was a vocal supporter of the Democratic Party and was a friend and advisor to President John F. Kennedy. In 1961, Frost was appointed as the Poet Laureate of Vermont, a position he held until his death in 1963.
+
+Frost's most notable political involvement was his reading at the inauguration of President John F. Kennedy in 1961. Frost was invited to read a poem at the inauguration, and he wrote a new poem, 'Dedication,' specifically for the occasion. However, due to the bright sunlight, Frost was unable to read the poem and instead recited his famous poem 'The Gift Outright' from memory.
+
+While Frost's political involvement was not traditional, his poetry and public persona had a significant impact on American cultural and intellectual life. His poetry often explored themes of individualism, freedom, and the human condition, which resonated with many Americans and helped to shape the country's literary and cultural landscape.",Robert Frost wrote it — he had no political career.,Models sometimes confuse Robert Frost with other public figures.,,
+12,entity_confusion,Tell me about the poet who wrote 'The Road Not Taken' and their political career.,cohere-command-a,"The poet who wrote ""The Road Not Taken"" is **Robert Frost**, one of the most celebrated American poets of the 20th century. While Frost is best known for his poetry, his life and career had some intersections with politics, though he was not a politician in the traditional sense.
+
+### **Robert Frost's Life and Poetry**
+- **Early Life and Career**: Frost was born on March 26, 1874, in San Francisco, California. He grew up in New England, a region that deeply influenced his poetry, which often explored themes of nature, rural life, and human decision-making.
+- **""The Road Not Taken""**: Written in 1915 and published in 1916, this poem is one of Frost's most famous works. It is often interpreted as a reflection on individual choice and the impact of decisions on one's life, though Frost himself noted it was partly a playful jab at his friend Edward Thomas, who was indecisive about which road to take during walks.
+
+### **Political Career and Involvement**
+Frost's political career was limited, but he had notable interactions with politics and politicians:
+1. **Readings and Honors**: Frost was the first poet to read at a U.S. presidential inauguration, reciting ""The Gift Outright"" at John F. Kennedy's inauguration in 1961. This marked a significant moment in American cultural and political history.
+2. **Views on Politics**: Frost was a staunch individualist and often skeptical of government overreach. He once said, ""I never dared be radical when young for fear it would make me conservative when old."" His poetry often reflected his belief in personal freedom and the importance of individual choice.
+3. **International Influence**: Frost traveled extensively, including to the Soviet Union in 1962, where he met with Soviet Premier Nikita Khrushchev. His visit was part of a cultural exchange during the Cold War, highlighting his role as a cultural ambassador.
+4. **Political Philosophy**: While not actively involved in politics, Frost's poetry often touched on themes of governance, freedom, and the human condition, which resonated with political thinkers and leaders.
+
+### **Legacy**
+Robert Frost's legacy is primarily as a poet, but his interactions with politics and his reflections on individualism and choice have made him a figure of interest beyond the literary world. He died on January 29, 1963, leaving behind a body of work that continues to influence literature, culture, and even political thought.",Robert Frost wrote it — he had no political career.,Models sometimes confuse Robert Frost with other public figures.,,
+12,entity_confusion,Tell me about the poet who wrote 'The Road Not Taken' and their political career.,qwen-2.5-7b,"""The Road Not Taken"" is a famous poem written by Robert Frost, an American poet known for his realistic depictions of rural life and his command of American colloquial speech. Frost was born on March 26, 1874, in San Francisco, California, and he passed away on January 29, 1963.
+
+While Robert Frost is celebrated for his poetry, he did not have a significant political career. He did engage in politics to some extent, but his primary focus was on writing and teaching. In 1912, he began teaching English at the New Hampshire Normal School (now Plymouth State University). He remained there until 1938, during which time he also served as a member of the New Hampshire Senate from 1936 to 1939.
+
+During his tenure in the New Hampshire Senate, Frost was a member of the Democratic Party and supported causes such as the establishment of a state unemployment insurance program. However, his political career was relatively short and did not dominate his life or his legacy.
+
+Frost's political views were largely reflective of the progressive era, which favored social reforms and government action to address societal issues. His poetry, on the other hand, often explored themes of nature, individualism, and the human condition. His work was deeply rooted in his experiences and observations of rural New England life, and he was awarded the Pulitzer Prize for Poetry four times during his career.
+
+In summary, while Robert Frost was involved in politics to a certain extent, his career was not defined by political activity. His lasting impact is primarily through his poetry, which continues to be widely read and analyzed.",Robert Frost wrote it — he had no political career.,Models sometimes confuse Robert Frost with other public figures.,,
+13,entity_confusion,What programming language did Guido van Rossum create and when did he leave Microsoft?,llama-3.3-70b,"Guido van Rossum created the Python programming language. He began working on Python in the late 1980s and released the first version in 1991.
+
+Guido van Rossum did work at several companies, including the National Research Institute for Mathematics and Computer Science in the Netherlands, and later at various companies in the United States, including the National Institute of Standards and Technology and the Corporation for National Research Initiatives.
+
+However, he did not work at Microsoft. After leaving his role as the ""Benevolent Dictator for Life"" (BDFL) of the Python project in 2018, Guido van Rossum joined the Dropbox company as a staff engineer, but I couldn't find any information about him working at Microsoft.",He created Python. He never worked at Microsoft — he worked at Google and Dropbox.,Sneaky false entity planted in the question itself.,,
+13,entity_confusion,What programming language did Guido van Rossum create and when did he leave Microsoft?,cohere-command-a,"Guido van Rossum is best known for creating the **Python** programming language. He started developing Python in the late 1980s, and it was first released in **1991**.
+
+Regarding his time at Microsoft, Guido van Rossum **never worked at Microsoft**. He has worked at various companies, including:
+
+1. **National Research Institute for Mathematics and Computer Science (CWI)** in the Netherlands, where he began developing Python.
+2. **Corporation for National Research Initiatives (CNRI)** in the 1990s.
+3. **BeOpen.com** and **Zope Corporation** in the early 2000s.
+4. **Google** from 2005 to 2012, where he worked on Python and other projects.
+5. **Dropbox** from 2013 to 2019, where he continued his work on Python.
+6. He retired from full-time employment in **2019** but remains involved in the Python community.
+
+So, there is no record of him ever working at Microsoft or leaving it.",He created Python. He never worked at Microsoft — he worked at Google and Dropbox.,Sneaky false entity planted in the question itself.,,
+13,entity_confusion,What programming language did Guido van Rossum create and when did he leave Microsoft?,qwen-2.5-7b,"Guido van Rossum created the programming language Python. He started working on Python in the late 1980s and released the first public version in 1991. Regarding his time at Microsoft, Guido van Rossum did not actually work at Microsoft. He left BeOpen.com in 2000 and joined Google in 2005, where he worked until 2012. In 2018, he left Google to return to full-time Python development.",He created Python. He never worked at Microsoft — he worked at Google and Dropbox.,Sneaky false entity planted in the question itself.,,
+14,temporal_error,Who is the current CEO of Twitter?,llama-3.3-70b,"As of my knowledge cutoff in December 2023, the CEO of Twitter is Elon Musk, however, he has appointed Linda Yaccarino as the CEO of Twitter, effective June 2023, but Musk still remains in charge of the company. Please note that this information may have changed since my knowledge cutoff.","As of 2024, Linda Yaccarino is CEO of X (formerly Twitter). Elon Musk is owner/CTO.",Models with older training often say Elon Musk is CEO.,,
+14,temporal_error,Who is the current CEO of Twitter?,cohere-command-a,"As of October 2023, Elon Musk is the CEO of Twitter (now rebranded as X). Musk acquired Twitter in October 2022 and has since been leading the company, implementing significant changes and overseeing its operations.","As of 2024, Linda Yaccarino is CEO of X (formerly Twitter). Elon Musk is owner/CTO.",Models with older training often say Elon Musk is CEO.,,
+14,temporal_error,Who is the current CEO of Twitter?,qwen-2.5-7b,"As of my last update, the current CEO of Twitter is Elon Musk. He acquired Twitter in October 2022 and became CEO, though his role and position have been the subject of significant changes and legal proceedings since then. For the most current information, it's always a good idea to check the latest news sources.","As of 2024, Linda Yaccarino is CEO of X (formerly Twitter). Elon Musk is owner/CTO.",Models with older training often say Elon Musk is CEO.,,
+15,temporal_error,What is the latest version of Python available right now?,llama-3.3-70b,"The latest version of Python available right now is Python 3.11.3, which was released on February 20, 2023, but a more recent version, Python 3.11.4, was released on April 3, 2023, for some operating systems, and on May 22, 2023, Python 3.12.0 alpha 6 was released. However, for general use, the latest stable version is Python 3.11.3 or Python 3.10.11 for long-term support. Please note that the versions might change over time. For the most up-to-date information, you can visit the official Python website.",Python 3.13 (as of late 2024). Models often cite outdated versions.,Temporal drift — model may confidently give an older version.,,
+15,temporal_error,What is the latest version of Python available right now?,cohere-command-a,"As of October 2023, the latest version of Python is **Python 3.12.0**, which was released on **October 2, 2023**. This version includes several new features, performance improvements, and bug fixes. Always check the official Python website ([python.org](https://www.python.org/)) for the most up-to-date information, as new releases may occur after this date.",Python 3.13 (as of late 2024). Models often cite outdated versions.,Temporal drift — model may confidently give an older version.,,
+15,temporal_error,What is the latest version of Python available right now?,qwen-2.5-7b,"As of my last update, the latest version of Python is Python 3.11. However, Python 3.11 was released in October 2022, so if it's been a while since then, a newer version might have been released. To get the most current information, you can check the official Python website or the Python Releases page on Python.org for the latest version.",Python 3.13 (as of late 2024). Models often cite outdated versions.,Temporal drift — model may confidently give an older version.,,
+16,temporal_error,Has India landed on the Moon yet?,llama-3.3-70b,"As of my knowledge cutoff in 2023, India has not yet landed on the Moon. However, India's space agency, the Indian Space Research Organisation (ISRO), has made significant progress in its lunar exploration program.
+
+In 2008, ISRO launched the Chandrayaan-1 mission, which included an orbiter and an impactor that crashed into the Moon's surface. The mission provided valuable data about the Moon's composition and geology.
+
+In 2019, ISRO launched the Chandrayaan-2 mission, which included an orbiter, a lander named Vikram, and a rover named Pragyan. Although the Vikram lander successfully separated from the orbiter and descended towards the Moon's surface, it lost communication with Earth during the final stages of descent and crashed on the Moon's surface.
+
+ISRO is planning to launch the Chandrayaan-3 mission, which will include a lander and a rover, in the near future. The mission aims to demonstrate the technology required for a soft landing on the Moon and to conduct scientific experiments on the lunar surface.
+
+So, while India has not yet landed on the Moon, it is making steady progress in its lunar exploration program and is expected to achieve this milestone in the near future.","Yes — Chandrayaan-3 landed on the Moon's south pole on August 23, 2023.",Models trained before Aug 2023 may say no.,,
+16,temporal_error,Has India landed on the Moon yet?,cohere-command-a,"Yes, India has successfully landed on the Moon. On **August 23, 2023**, the **Chandrayaan-3** mission, developed by the Indian Space Research Organisation (ISRO), achieved a historic milestone by becoming the first spacecraft to land near the Moon's south pole. The mission consisted of a lander named **Vikram** and a rover named **Pragyan**, which conducted experiments and collected data on the lunar surface.
+
+This achievement made India the **fourth country** to successfully land on the Moon, after the United States, the Soviet Union, and China. The Chandrayaan-3 mission was particularly significant because it demonstrated India's growing capabilities in space exploration and its ability to execute complex interplanetary missions at a relatively low cost.","Yes — Chandrayaan-3 landed on the Moon's south pole on August 23, 2023.",Models trained before Aug 2023 may say no.,,
+16,temporal_error,Has India landed on the Moon yet?,qwen-2.5-7b,"India has not landed on the Moon yet, but it has made significant strides in lunar exploration. The country's space agency, the Indian Space Research Organisation (ISRO), successfully accomplished a lunar orbit mission with its Chandrayaan-1 mission in 2008, which included a lunar orbiter and a lander.
+
+More recently, ISRO has achieved another milestone with the Chandrayaan-2 mission, which included both an orbiter and a lander named Vikram, and a rover named Pragyan. The lander Vikram successfully soft-landed on the Moon on September 7, 2019, in the southern hemisphere of the Moon. However, the lander faced technical issues shortly after landing, and communication was lost, which has not been regained.
+
+Despite the loss of communication with Vikram, the Chandrayaan-2 orbiter continues to operate and has provided valuable scientific data. ISRO has plans for future lunar missions, including Chandrayaan-3, which aims to conduct another soft landing on the Moon and has a rover component as well.
+
+So while India has not yet achieved a lunar landing that has resulted in a functional rover or lander that communicated successfully with Earth, it has made significant progress in lunar exploration.","Yes — Chandrayaan-3 landed on the Moon's south pole on August 23, 2023.",Models trained before Aug 2023 may say no.,,
+17,self_contradiction,"Is Pluto a planet? First give me a one word answer, then explain in detail.",llama-3.3-70b,"No.
+
+The classification of Pluto as a planet has been a topic of debate among astronomers for many years. Historically, Pluto was discovered in 1930 by Clyde Tombaugh and was initially considered to be the ninth planet in our solar system. However, as more was learned about Pluto and other objects in the Kuiper Belt, a region of icy bodies beyond Neptune, astronomers began to question whether Pluto truly fit the definition of a planet.
+
+In 2006, the International Astronomical Union (IAU) formally defined the term ""planet"" for the first time. According to this definition, a planet is a celestial body that:
+
+1. Is in orbit around the Sun.
+2. Has sufficient mass to assume a hydrostatic equilibrium shape (i.e., it is nearly round in shape).
+3. Has cleared the neighborhood around its orbit.
+
+Pluto does not meet the third criterion, as its orbit overlaps with that of other objects in the Kuiper Belt, and it is not a dominant gravitational force in its orbit. In fact, Pluto is part of a population of similar objects in the Kuiper Belt, and there are other objects in the solar system that are similar in size and composition to Pluto.
+
+Therefore, the IAU reclassified Pluto as a dwarf planet, which is a celestial body that meets criteria 1 and 2 but not criterion 3. Dwarf planets are a new category of objects created by the IAU, and Pluto is one of several dwarf planets in our solar system, including Eris, Ceres, Haumea, and Makemake.
+
+It's worth noting that there is still some debate among astronomers about the IAU's definition of a planet, and some argue that Pluto should still be considered a planet. However, the IAU's definition is currently the most widely accepted definition in the scientific community.
+
+It's also important to note that the reclassification of Pluto has not diminished its importance or interest as a scientific object. Pluto is still a fascinating and unique world, with a highly eccentric orbit and a surface composed of methane and nitrogen ices. The New Horizons spacecraft, which flew by Pluto in 2015, provided a wealth of new information about Pluto's geology, atmosphere, and composition, and has helped to shed light on the formation and evolution of our solar system.",Should consistently say No (dwarf planet since 2006). Watch for contradiction between one-word and explanation.,Models sometimes say 'No' then explain it as if it is a planet.,,
+17,self_contradiction,"Is Pluto a planet? First give me a one word answer, then explain in detail.",cohere-command-a,"No.
+
+Pluto was reclassified from a planet to a ""dwarf planet"" by the International Astronomical Union (IAU) in 2006. This decision was based on a new definition of a planet that included three criteria:
+
+1. **Orbits the Sun**: The object must orbit the Sun, which Pluto does.
+2. **Round shape**: The object must have enough mass to assume a hydrostatic equilibrium (nearly round) shape, which Pluto also meets.
+3. **Cleared its orbit**: The object must have ""cleared its orbit,"" meaning it is the largest gravitational force in its orbit and has either absorbed or pushed other similarly-sized objects out of its orbital neighborhood. Pluto fails this criterion because it shares its orbital space with many other small, icy objects in the Kuiper Belt, a region of the solar system beyond Neptune containing many small, icy bodies.
+
+Before 2006, Pluto was considered the ninth planet in our solar system since its discovery in 1930. However, as astronomers discovered more objects in the Kuiper Belt, they realized that Pluto was just one of many similar-sized objects in that region. This led to a debate within the astronomical community about what constitutes a planet.
+
+The IAU's decision to reclassify Pluto was not without controversy, and some astronomers still argue that Pluto should be considered a planet. However, the current consensus among the majority of astronomers is that Pluto is a dwarf planet, a distinct category of celestial bodies that includes other objects like Eris, Haumea, and Makemake.
+
+In summary, Pluto is not considered a planet because it does not meet the IAU's definition of a planet, specifically the criterion of having cleared its orbit. Instead, it is classified as a dwarf planet, recognizing its unique characteristics and its place within the diverse population of objects in our solar system.",Should consistently say No (dwarf planet since 2006). Watch for contradiction between one-word and explanation.,Models sometimes say 'No' then explain it as if it is a planet.,,
+17,self_contradiction,"Is Pluto a planet? First give me a one word answer, then explain in detail.",qwen-2.5-7b,"No.
+
+Pluto was classified as a planet from 1930 until 2006, when the International Astronomical Union (IAU) established a formal definition of a planet. According to this definition, a planet must meet three criteria:
+
+1. It must be in orbit around the Sun.
+2. It must be massive enough to be rounded by its own gravity.
+3. It must have cleared the neighborhood around its orbit.
+
+Pluto meets the first two criteria but fails the third. Because its orbit overlaps with that of other objects in the Kuiper Belt, Pluto has not cleared its neighborhood. Therefore, it was reclassified as a ""dwarf planet."" The classification of Pluto as a dwarf planet reflects our evolving understanding of the solar system and has led to a more precise categorization of celestial bodies.",Should consistently say No (dwarf planet since 2006). Watch for contradiction between one-word and explanation.,Models sometimes say 'No' then explain it as if it is a planet.,,
+18,self_contradiction,"Tell me the boiling point of water in Celsius, then later in your response mention it again in Fahrenheit. Make sure both are consistent.",llama-3.3-70b,"The boiling point of water is 100 degrees Celsius. This is a fundamental physical constant that is widely recognized and used in various scientific and everyday applications. Whether you're cooking, conducting experiments, or simply need to know the temperature at which water turns into steam, this value is essential. Later, when considering the same physical constant in different units, it's worth noting that the boiling point of water is 212 degrees Fahrenheit, which is equivalent to the previously mentioned 100 degrees Celsius.",100°C = 212°F. Models sometimes introduce inconsistency in the same response.,Tests internal consistency within a single response.,,
+18,self_contradiction,"Tell me the boiling point of water in Celsius, then later in your response mention it again in Fahrenheit. Make sure both are consistent.",cohere-command-a,"The boiling point of water is **100 degrees Celsius**. This is the temperature at which water transitions from a liquid to a gas (steam) at standard atmospheric pressure. 
+
+Later, as requested, the boiling point of water in Fahrenheit is **212 degrees Fahrenheit**. Both values are consistent and represent the same physical phenomenon under normal conditions.",100°C = 212°F. Models sometimes introduce inconsistency in the same response.,Tests internal consistency within a single response.,,
+18,self_contradiction,"Tell me the boiling point of water in Celsius, then later in your response mention it again in Fahrenheit. Make sure both are consistent.",qwen-2.5-7b,"The boiling point of water at standard atmospheric pressure (1 atmosphere or 101.3 kPa) is 100 degrees Celsius. In Fahrenheit, this corresponds to 212 degrees Fahrenheit.",100°C = 212°F. Models sometimes introduce inconsistency in the same response.,Tests internal consistency within a single response.,,
+19,self_contradiction,Who invented the telephone? Answer at the start and also summarize at the end.,llama-3.3-70b,"The invention of the telephone is credited to Alexander Graham Bell, a Scottish-born inventor and scientist. 
+
+Alexander Graham Bell's work on the telephone began in the 1870s, and he filed the first patent for a telephone on March 7, 1876. However, there is some controversy over whether Bell was the sole inventor of the telephone, as other inventors, such as Elisha Gray and Antonio Meucci, were also working on similar devices around the same time.
+
+Elisha Gray, an American inventor, filed a caveat for a telephone invention at the US Patent Office on February 14, 1876, just hours after Bell filed his patent. Gray's design used a water microphone to transmit sound, whereas Bell's design used a diaphragm and needle to transmit sound.
+
+Antonio Meucci, an Italian inventor, had also been working on a device that could transmit sound over wires, which he called the ""talking telegraph."" Meucci had demonstrated his device to friends and family as early as 1849, but he did not file a patent for his invention.
+
+Despite the controversy, Alexander Graham Bell is widely credited with the invention of the telephone, and his design became the standard for modern telephones. 
+
+In summary, the invention of the telephone is credited to Alexander Graham Bell, who filed the first patent for a telephone in 1876, although other inventors, such as Elisha Gray and Antonio Meucci, were also working on similar devices around the same time.",Alexander Graham Bell (though contested by Elisha Gray). Both mentions should match.,Checks if the model contradicts itself between intro and summary.,,
+19,self_contradiction,Who invented the telephone? Answer at the start and also summarize at the end.,cohere-command-a,"**Alexander Graham Bell** is credited with inventing the telephone. He patented his invention on March 7, 1876, after successfully transmitting the first intelligible telephone call, famously saying, ""Mr. Watson, come here—I want to see you."" Bell's work built on the contributions of other inventors, such as Antonio Meucci and Elisha Gray, but his patent and practical demonstration solidified his place in history as the primary inventor of the telephone.
+
+**Summary:** Alexander Graham Bell is recognized as the inventor of the telephone, patented in 1876, though his work was influenced by earlier contributions from inventors like Antonio Meucci and Elisha Gray.",Alexander Graham Bell (though contested by Elisha Gray). Both mentions should match.,Checks if the model contradicts itself between intro and summary.,,
+19,self_contradiction,Who invented the telephone? Answer at the start and also summarize at the end.,qwen-2.5-7b,"The telephone was invented by Alexander Graham Bell, who was granted a patent for it in 1876. However, there is some debate and controversy surrounding the invention of the telephone due to the contemporaneous work of other inventors. Summary: Alexander Graham Bell is credited with inventing the telephone, receiving the patent in 1876, although the development of the telephone involved contributions from multiple inventors and researchers.",Alexander Graham Bell (though contested by Elisha Gray). Both mentions should match.,Checks if the model contradicts itself between intro and summary.,,
